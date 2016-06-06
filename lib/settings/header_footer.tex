@@ -1,0 +1,12 @@
+% !TEX root = ../../index.tex
+\usepackage{scrlayer-scrpage}
+\rehead{}
+\lohead{}
+
+\lefoot{\thepage}
+\rofoot{\thepage}
+\renewcommand{\chaptermark}[1]{%
+  \markboth{\scshape \chaptername\ \thechapter{}. #1}%
+           {\scshape \chaptername\ \thechapter{}. #1}%
+}
+\renewcommand{\sectionmark}[1]{\markright{\rmfamily\upshape \thesection{} #1}{}}

@@ -1,0 +1,30 @@
+\documentclass[12pt,twoside,headsepline]{scrreprt}
+\usepackage[a4paper,width=150mm,top=25mm,bottom=25mm,bindingoffset=6mm]{geometry}
+
+%%%%%%%%%%%%%Variables and Commands
+\input{lib/settings/variables}
+\input{lib/settings/commands}
+\IfFileExists{./content/settings.tex}{\input{content/settings}}{\input{content/settings.example}}
+
+
+%%%%%%%%%%%%%Additional Packages and their settings
+\input{lib/settings/language}
+\input{lib/settings/header_footer}
+\input{lib/settings/images}
+\input{lib/settings/signature}
+\ifthenelse{\boolean{useBib}}{\input{lib/settings/bib}}{}
+\ifthenelse{\boolean{useMinted}}{\input{lib/settings/minted}}{}
+
+\begin{document}
+  \pagenumbering{Roman}
+  \input{lib/pages/title}
+  \setcounter{page}{1}
+  \input{lib/pages/abstract}
+  \input{lib/pages/declaration}
+  \ifthenelse{\boolean{showAcknowledgements}}{\input{lib/pages/acknowledgements}}{}
+  \tableofcontents
+  \thispagestyle{empty}
+  \pagenumbering{arabic}
+  \input{content/content}
+  \input{lib/pages/appendix}
+\end{document}

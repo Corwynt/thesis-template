@@ -1,0 +1,8 @@
+% !TEX root = ../../index.tex
+
+\usepackage{iflang}
+
+\newcommand{\germanOnly}[1]{\IfLanguageName{ngerman}{#1}{}}
+\newcommand{\englishOnly}[1]{\IfLanguageName{english}{#1}{}}
+\newcommand{\langVar}[2]{\IfLanguageName{english}{#1}{#2}}
+\newcommand{\inputChapter}[1]{\input{content/chapters/#1}}

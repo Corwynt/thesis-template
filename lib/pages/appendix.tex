@@ -1,0 +1,15 @@
+% !TEX root = ../../index.tex
+\clearpage
+\appendix
+\addcontentsline{toc}{chapter}{\langVar{Appendix}{Anhang}}
+\addcontentsline{toc}{section}{\langVar{List of Tables}{Tabellenverzeichnis}}
+%\pagenumbering{Alph}
+\listoftables
+\addcontentsline{toc}{section}{\langVar{List of Figures}{Bildverzeichnis}}
+\listoffigures
+\addcontentsline{toc}{section}{\langVar{References}{Quellenverzeichnis}}
+
+\ifthenelse{\boolean{useMinted}}{\listoflistings
+\addcontentsline{toc}{section}{\langVar{Code Listings}{Quellcode}}}{}
+
+\ifthenelse{\boolean{useBib}}{\printbibliography}{}
